@@ -1,0 +1,119 @@
+# AWS Data Services
+
+## S3 Bucket
+```yaml
+id: aws-s3
+name: S3 Bucket
+type: service
+domain: [data]
+cost: 1
+rarity: common
+stats:
+  attack: 0
+  health: 4
+keywords: []
+effect: |
+  Storage: You may "store" up to 2 cards from your hand
+  face-down under this service.
+  If destroyed, return stored cards to hand.
+flavor: "11 9's of durability"
+reference: "https://aws.amazon.com/s3/"
+```
+
+## RDS PostgreSQL
+```yaml
+id: aws-rds-postgres
+name: RDS PostgreSQL
+type: service
+domain: [data, data]
+cost: 3
+rarity: uncommon
+stats:
+  attack: 1
+  health: 5
+keywords: [stateful]
+effect: |
+  Your other Data services have +1 attack.
+  Multi-AZ: If this would be destroyed, you may
+  pay 💾 to prevent it (once per game).
+flavor: "The world's most advanced open source database"
+reference: "https://aws.amazon.com/rds/postgresql/"
+```
+
+## DynamoDB Table
+```yaml
+id: aws-dynamodb
+name: DynamoDB Table
+type: service
+domain: [data]
+cost: 2
+rarity: common
+stats:
+  attack: 1
+  health: 3
+keywords: [serverless]
+effect: |
+  Serverless: Can attack immediately.
+  On-Demand: This costs 1 less if you attacked
+  this turn.
+flavor: "Single-digit millisecond latency at any scale"
+reference: "https://aws.amazon.com/dynamodb/"
+```
+
+## Redshift Cluster
+```yaml
+id: aws-redshift
+name: Redshift Cluster
+type: service
+domain: [data, data, intelligence]
+cost: 5
+rarity: rare
+stats:
+  attack: 2
+  health: 6
+keywords: [stateful]
+effect: |
+  Analytics: At end of turn, draw a card for each
+  Data service you control (max 3).
+flavor: "Petabyte-scale data warehousing"
+reference: "https://aws.amazon.com/redshift/"
+```
+
+## ElastiCache Redis
+```yaml
+id: aws-elasticache-redis
+name: ElastiCache Redis
+type: service
+domain: [data]
+cost: 2
+rarity: uncommon
+stats:
+  attack: 2
+  health: 2
+keywords: [cached]
+effect: |
+  Cached: Your Services cost 1 less (min 1).
+  This bonus is lost if ElastiCache is destroyed.
+flavor: "In-memory caching for microsecond latency"
+reference: "https://aws.amazon.com/elasticache/"
+```
+
+## Aurora Database
+```yaml
+id: aws-aurora
+name: Aurora Database
+type: service
+domain: [data, data, data]
+cost: 6
+rarity: legendary
+stats:
+  attack: 2
+  health: 8
+keywords: [stateful, resilient, auto-healing]
+effect: |
+  Auto-Healing: Restore 2 health at end of turn.
+  Resilient: Returns to hand instead of being destroyed.
+  Global Database: Create a 0/4 "Read Replica" token.
+flavor: "MySQL and PostgreSQL compatible, 5x faster"
+reference: "https://aws.amazon.com/rds/aurora/"
+```

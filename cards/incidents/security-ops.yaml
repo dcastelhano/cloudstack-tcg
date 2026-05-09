@@ -1,0 +1,147 @@
+# Incident Cards - Security Threats & Operational Events
+
+## DDoS Attack
+```yaml
+id: incident-ddos
+name: DDoS Attack
+type: incident
+domain: [network]
+cost: 2
+rarity: common
+effect: |
+  Deal 3 damage to target Service.
+  If target has no "WAF" or "Shield" buff,
+  deal 6 damage instead.
+flavor: "Layer 7 floods incoming"
+```
+
+## Ransomware
+```yaml
+id: incident-ransomware
+name: Ransomware Attack
+type: incident
+domain: [security, security]
+cost: 4
+rarity: rare
+effect: |
+  Encrypt target Service. It can't attack or use
+  abilities until owner pays 💾💾 or destroys it.
+  If target is "Encrypted" keyword, this has no effect.
+flavor: "Pay the ransom or lose your data"
+```
+
+## Configuration Drift
+```yaml
+id: incident-config-drift
+name: Configuration Drift
+type: incident
+domain: [compute]
+cost: 1
+rarity: common
+effect: |
+  Target Service gets -1/-1 until end of turn.
+  If it has "Infrastructure as Code" buff, 
+  this has no effect.
+flavor: "Works on my machine"
+```
+
+## Memory Leak
+```yaml
+id: incident-memory-leak
+name: Memory Leak
+type: incident
+domain: [compute]
+cost: 2
+rarity: uncommon
+effect: |
+  Target Service loses 1 health at the start
+  of each turn until destroyed.
+flavor: "Who forgot to free() the memory?"
+```
+
+## SQL Injection
+```yaml
+id: incident-sql-injection
+name: SQL Injection
+type: incident
+domain: [data, security]
+cost: 3
+rarity: uncommon
+effect: |
+  Look at opponent's hand. Choose a card and
+  discard it. If target was a Data service,
+  draw 2 cards.
+flavor: "'; DROP TABLE users;--"
+```
+
+## Outage Event
+```yaml
+id: incident-outage
+name: Regional Outage
+type: incident
+domain: [network, network]
+cost: 4
+rarity: rare
+effect: |
+  Destroy all Services that share an Infrastructure
+  region with target Service.
+  Multi-Region services are not affected.
+flavor: "us-east-1 is having a bad day"
+```
+
+## Zero Day Exploit
+```yaml
+id: incident-zero-day
+name: Zero Day Exploit
+type: incident
+domain: [security, security, security]
+cost: 6
+rarity: legendary
+effect: |
+  Destroy target Service. It can't be prevented.
+  Then, if owner controls another copy,
+  destroy that too.
+flavor: "CVE pending... good luck"
+```
+
+## Chaos Monkey
+```yaml
+id: incident-chaos-monkey
+name: Chaos Monkey
+type: incident
+domain: [compute, security]
+cost: 3
+rarity: rare
+effect: |
+  Destroy a random Service (yours or opponent's).
+  Draw a card.
+flavor: "Netflix's gift to reliability engineering"
+reference: "https://netflix.github.io/chaosmonkey/"
+```
+
+## Rate Limiting
+```yaml
+id: incident-rate-limit
+name: API Rate Limiting
+type: incident
+domain: [network]
+cost: 1
+rarity: common
+effect: |
+  Target Service can't attack next turn.
+flavor: "429 Too Many Requests"
+```
+
+## Cost Overrun
+```yaml
+id: incident-cost-overrun
+name: Unexpected AWS Bill
+type: incident
+domain: [data]
+cost: 2
+rarity: uncommon
+effect: |
+  Opponent must discard a card or sacrifice
+  a Service.
+flavor: "Wait, NAT Gateway costs HOW much?"
+```

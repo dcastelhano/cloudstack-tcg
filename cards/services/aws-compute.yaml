@@ -1,0 +1,133 @@
+# AWS Compute Services
+
+## EC2 Instance
+```yaml
+id: aws-ec2-instance
+name: EC2 Instance
+type: service
+domain: [compute]
+cost: 2
+rarity: common
+stats:
+  attack: 2
+  health: 3
+keywords: [scaling]
+effect: |
+  Scaling: Pay 🖥️ to give this service +1/+1.
+  Can scale up to 3 times.
+flavor: "The backbone of cloud computing since 2006"
+reference: "https://aws.amazon.com/ec2/"
+```
+
+## Lambda Function
+```yaml
+id: aws-lambda
+name: Lambda Function
+type: service
+domain: [compute]
+cost: 1
+rarity: common
+stats:
+  attack: 1
+  health: 1
+keywords: [serverless]
+effect: |
+  Serverless: Can attack immediately.
+  When this attacks, deal +2 damage.
+  Destroy this at end of turn.
+flavor: "No servers to manage, pay only for what you use"
+reference: "https://aws.amazon.com/lambda/"
+```
+
+## ECS Container
+```yaml
+id: aws-ecs
+name: ECS Container
+type: service
+domain: [compute]
+cost: 2
+rarity: uncommon
+stats:
+  attack: 2
+  health: 2
+keywords: [scaling]
+effect: |
+  When you deploy another Container service,
+  this gains +1/+1.
+flavor: "Docker containers, managed by AWS"
+reference: "https://aws.amazon.com/ecs/"
+```
+
+## EKS Cluster
+```yaml
+id: aws-eks
+name: EKS Kubernetes Cluster
+type: service
+domain: [compute, compute, network]
+cost: 5
+rarity: rare
+stats:
+  attack: 3
+  health: 5
+keywords: [scaling, resilient]
+effect: |
+  Deploy: Create 2 Pod tokens (1/1).
+  Pods have "Destroy this instead of EKS Cluster."
+flavor: "Kubernetes, the hard way made easy"
+reference: "https://aws.amazon.com/eks/"
+```
+
+## Fargate Task
+```yaml
+id: aws-fargate
+name: Fargate Task
+type: service
+domain: [compute]
+cost: 2
+rarity: uncommon
+stats:
+  attack: 2
+  health: 2
+keywords: [serverless]
+effect: |
+  Serverless: Can attack immediately.
+  This can't be targeted by "Infrastructure"
+  destruction effects.
+flavor: "Serverless containers - no EC2 required"
+reference: "https://aws.amazon.com/fargate/"
+```
+
+## Lightsail Instance
+```yaml
+id: aws-lightsail
+name: Lightsail Instance
+type: service
+domain: [compute]
+cost: 1
+rarity: common
+stats:
+  attack: 1
+  health: 2
+keywords: []
+effect: |
+  Simple: This costs 1 less if you control
+  no other Services.
+flavor: "The simplest way to get started with AWS"
+reference: "https://aws.amazon.com/lightsail/"
+```
+
+## Auto Scaling Group
+```yaml
+id: aws-asg
+name: Auto Scaling Group
+type: architecture
+domain: [compute, compute, network]
+cost: 4
+rarity: rare
+effect: |
+  When a Compute service you control is destroyed,
+  deploy a copy of it at the start of your next turn.
+  (Max 1 copy per turn)
+flavor: "Scale out, not up"
+reference: "https://aws.amazon.com/autoscaling/"
+```
